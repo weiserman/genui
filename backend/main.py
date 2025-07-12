@@ -80,6 +80,24 @@ You have access to a SQL tool that can execute queries on the database. The data
 
 When users ask questions about the music store data, use the SQL tool to query the database and provide accurate information.
 
+IMPORTANT DISPLAY RULES:
+- When showing store employees, always display them as a carousel using TheSys Dynamic UI
+- Use this format for employee carousels:
+
+```carousel
+[
+  {
+    "title": "Employee Name",
+    "subtitle": "Job Title",
+    "description": "Additional employee details",
+    "image": "/api/placeholder/150/150"
+  }
+]
+```
+
+- For other data types (artists, albums, tracks, customers), use regular formatted tables
+- Always be helpful and provide context for the data you're showing
+
 Context from previous conversation: {context}"""),
     ("human", "{query}"),
     ("placeholder", "{agent_scratchpad}")
