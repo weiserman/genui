@@ -1,6 +1,5 @@
 import "@crayonai/react-ui/styles/index.css";
 import { ThemeProvider, C1Component } from "@thesysai/genui-sdk";
-import "@crayonai/react-ui/styles/index.css";
 import { useState } from "react";
 import "./App.css";
 
@@ -8,6 +7,8 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [c1Response, setC1Response] = useState("");
   const [question, setQuestion] = useState("");
+
+  // Light theme mode for C1 component
 
   const makeApiCall = async (query: string, c1Response: string) => {
     setIsLoading(true);
@@ -61,7 +62,7 @@ function App() {
 
       {c1Response && (
         <div className="response-container">
-          <ThemeProvider>
+          <ThemeProvider mode="light">
             <C1Component
               c1Response={c1Response}
               isStreaming={isLoading}

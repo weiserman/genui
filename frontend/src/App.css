@@ -1,38 +1,57 @@
+/* Light theme styling to match C1 component theme */
 .app-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 24px;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, sans-serif;
 }
 
 .app-container h1 {
   text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
+  margin-bottom: 32px;
+  color: #1a1a1a;
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
 }
 
 .app-container form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 16px;
+  margin-bottom: 32px;
+  background-color: #f8f9fa;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e1e5e9;
 }
 
 .question-input {
   width: 100%;
-  padding: 12px 16px;
+  padding: 16px;
   border: 2px solid #e1e5e9;
   border-radius: 8px;
   font-size: 16px;
-  font-family: inherit;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #ffffff;
+  color: #1a1a1a;
   resize: vertical;
-  min-height: 50px;
-  transition: border-color 0.2s ease;
+  min-height: 56px;
+  transition: all 0.2s ease;
+  line-height: 1.5;
 }
 
 .question-input:focus {
   outline: none;
   border-color: #646cff;
   box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.1);
+  background-color: #ffffff;
+}
+
+.question-input::placeholder {
+  color: #666666;
 }
 
 .submit-button {
@@ -45,43 +64,74 @@
   font-size: 16px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: all 0.2s ease;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .submit-button:hover:not(:disabled) {
   background-color: #535bf2;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .submit-button:disabled {
   background-color: #a0a0a0;
   cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .response-container {
-  margin-top: 2rem;
-  padding: 1rem;
+  margin-top: 24px;
+  padding: 0;
   border: 1px solid #e1e5e9;
-  border-radius: 8px;
-  background-color: #f8f9fa;
+  border-radius: 12px;
+  background-color: #ffffff;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-@media (prefers-color-scheme: dark) {
+/* Custom scrollbar for better aesthetics */
+.question-input::-webkit-scrollbar {
+  width: 6px;
+}
+
+.question-input::-webkit-scrollbar-track {
+  background: #f1f3f4;
+  border-radius: 3px;
+}
+
+.question-input::-webkit-scrollbar-thumb {
+  background: #c1c7cd;
+  border-radius: 3px;
+}
+
+.question-input::-webkit-scrollbar-thumb:hover {
+  background: #a8b0b8;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-container {
+    padding: 16px;
+  }
+  
   .app-container h1 {
-    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+  
+  .app-container form {
+    padding: 20px;
   }
   
   .question-input {
-    background-color: #2a2a2a;
-    border-color: #444;
-    color: #fff;
-  }
-  
-  .question-input:focus {
-    border-color: #646cff;
-  }
-  
-  .response-container {
-    background-color: #1a1a1a;
-    border-color: #444;
+    font-size: 16px; /* Prevent zoom on iOS */
   }
 }
