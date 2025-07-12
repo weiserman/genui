@@ -15,8 +15,6 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
-lib64/
 parts/
 sdist/
 var/
@@ -31,6 +29,7 @@ env/
 ENV/
 env.bak/
 venv.bak/
+# Backend virtual environment files (but not the backend folder itself)
 backend/bin/
 backend/lib/
 backend/include/
@@ -57,7 +56,8 @@ Thumbs.db
 *.log
 logs/
 
-# Database
+# Database (but keep Chinook sample database)
 *.db
 *.sqlite
 *.sqlite3
+!backend/db/Chinook.db
