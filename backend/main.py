@@ -86,12 +86,12 @@ IMPORTANT DISPLAY RULES:
 
 ```carousel
 [
-  {
+  {{
     "title": "Employee Name",
-    "subtitle": "Job Title",
+    "subtitle": "Job Title", 
     "description": "Additional employee details",
     "image": "/api/placeholder/150/150"
-  }
+  }}
 ]
 ```
 
